@@ -1,34 +1,29 @@
 package org.codapli.utn.controlador;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class ControladorServos {
 
 	@Autowired
-	ServoHombro servoHombro;
-	@Autowired
-	ServoCodo servoCodo;
-	@Autowired
-	ServoPinza servoPinza;
-	@Autowired
-	ServoBase servoBase;
+	private ApplicationContext context;
 
-	public ServoHombro getServoHombro() {
-		return servoHombro;
+	public ServoCodapli getServoHombro() {
+		return (ServoCodapli) context.getBean("servoHombro");
 	}
 
-	public ServoCodo getServoCodo() {
-		return servoCodo;
+	public ServoCodapli getServoCodo() {
+		return (ServoCodapli) context.getBean("servoCodo");
 	}
 
-	public ServoPinza getServoPinza() {
-		return servoPinza;
+	public ServoCodapli getServoPinza() {
+		return (ServoCodapli) context.getBean("servoPinza");
 	}
 
-	public ServoBase getServoBase() {
-		return servoBase;
+	public ServoCodapli getServoBase() {
+		return (ServoCodapli) context.getBean("servoBase");
 	}
 
 }

@@ -5,14 +5,16 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import org.codapli.utn.MainBrazoRobot;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PropertiesApp {
 
 	private String filename = "/resources/config.properties";
 	private Properties prop;
 	private InputStream input = null;
 
-	public PropertiesApp() {
+	{
 		System.out.println("inicializo las propiedades");
 		prop = new Properties();
 		input = MainBrazoRobot.class.getResourceAsStream(filename);
@@ -36,6 +38,9 @@ public class PropertiesApp {
 				}
 			}
 		}
+	}
+
+	public PropertiesApp() {
 	}
 
 	public String getProperty(String name) {

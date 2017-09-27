@@ -12,6 +12,7 @@ public class ControladorServos {
 
 	public ServoCodapli getServoHombro() {
 		return (ServoCodapli) context.getBean("servoHombro");
+
 	}
 
 	public ServoCodapli getServoCodo() {

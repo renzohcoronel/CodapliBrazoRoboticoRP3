@@ -10,8 +10,8 @@ public class MouseAdapterButton extends MouseAdapter {
 
 	private Timer timer;
 
-	public MouseAdapterButton(ActionListener action) {
-		timer = new Timer(120, action);
+	public MouseAdapterButton(ActionListener action, Integer delta) {
+		timer = new Timer(delta, action);
 		timer.setRepeats(true);
 	}
 

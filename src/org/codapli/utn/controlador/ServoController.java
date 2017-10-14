@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class ControladorServos {
+public class ServoController {
 
 	@Autowired
 	private ApplicationContext context;

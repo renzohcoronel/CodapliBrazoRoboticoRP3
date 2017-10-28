@@ -21,7 +21,7 @@ public class ServoCodapli {
 	public ServoCodapli(String nombre, Integer gpio, float max, float min, int time) throws RuntimeIOException {
 		this();
 		this.servoName = nombre;
-		// this.servo = new Servo(gpio, 1.5f);
+		this.servo = new Servo(gpio, 1.5f);
 		setMax(max);
 		setMin(min);
 		setTime(time);

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -24,8 +25,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
-
-import net.miginfocom.swing.MigLayout;
 
 @SpringBootApplication(scanBasePackages = "org.codapli")
 public class MainBrazoRobot extends JFrame {
@@ -93,7 +92,10 @@ public class MainBrazoRobot extends JFrame {
 		setTitle("CODAPLI - Brazo Robotico");
 		setBounds(100, 100, 898, 603);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
+		// setResizable(false);
+		setLocationRelativeTo(null);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		setUndecorated(true);
 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.BLACK);
@@ -108,10 +110,10 @@ public class MainBrazoRobot extends JFrame {
 		Header.setBackground(Color.BLACK);
 		Header.setBounds(0, 0, 896, 63);
 		panel.add(Header);
-		Header.setLayout(new MigLayout("", "[891.00px]", "[83px]"));
+		Header.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
 		ImagePanel jpanelImage = new ImagePanel("/resources/customLogo.jpg");
-		Header.add(jpanelImage, "cell 0 0,alignx center,growy");
+		Header.add(jpanelImage);
 		GridBagLayout gbl_jpanelImage = new GridBagLayout();
 		gbl_jpanelImage.columnWidths = new int[] { 0 };
 		gbl_jpanelImage.rowHeights = new int[] { 0 };
